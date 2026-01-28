@@ -4,18 +4,11 @@ import { SiLeetcode } from 'react-icons/si'
 export default function Contact() {
   const socialLinks = [
     {
-      name: 'GitHub',
-      icon: FaGithub,
-      href: 'https://github.com/ChaseConover33', // Replace with your GitHub
-      description: 'Check out my code and projects',
-      color: 'hover:text-gray-300 hover:border-gray-300',
-    },
-    {
-      name: 'LeetCode',
-      icon: SiLeetcode,
-      href: 'https://leetcode.com/u/ChaseConover/', // Replace with your LeetCode
-      description: 'View my coding challenges and solutions',
-      color: 'hover:text-orange-400 hover:border-orange-400',
+      name: 'Email',
+      icon: FaEnvelope,
+      href: 'mailto:chase.f.conover@gmail.com',
+      description: 'Send me a message',
+      color: 'hover:text-red-400 hover:border-red-400',
     },
     {
       name: 'LinkedIn',
@@ -25,16 +18,23 @@ export default function Contact() {
       color: 'hover:text-blue-400 hover:border-blue-400',
     },
     {
-      name: 'Email',
-      icon: FaEnvelope,
-      href: 'mailto:chase.f.conover@gmail.com',
-      description: 'Send me a message',
-      color: 'hover:text-red-400 hover:border-red-400',
+      name: 'GitHub',
+      icon: FaGithub,
+      href: 'https://github.com/ChaseConover33',
+      description: 'Check out my code and projects',
+      color: 'hover:text-gray-300 hover:border-gray-300',
+    },
+    {
+      name: 'LeetCode',
+      icon: SiLeetcode,
+      href: 'https://leetcode.com/u/ChaseConover/',
+      description: 'View my coding challenges and solutions',
+      color: 'hover:text-orange-400 hover:border-orange-400',
     },
   ]
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding scroll-mt-20">
       <div className="container-max">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

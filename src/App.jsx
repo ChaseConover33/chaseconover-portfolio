@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import About from './sections/About'
 import Skills from './sections/Skills'
 import Experience from './sections/Experience'
+import Education from './sections/Education'
 import Projects from './sections/Projects'
 import GitHub from './sections/GitHub'
 import LeetCode from './sections/LeetCode'
@@ -18,8 +19,9 @@ function App() {
     const handleScroll = () => {
       const sections = [
         'about',
-        'skills',
         'experience',
+        'education',
+        'skills',
         'projects',
         'github',
         'leetcode',
@@ -27,7 +29,11 @@ function App() {
         'blog',
         'contact',
       ]
-      const scrollPosition = window.scrollY + 100
+      
+      // Get header height to match scroll offset
+      const header = document.querySelector('header')
+      const headerHeight = header ? header.offsetHeight + 10 : 110
+      const scrollPosition = window.scrollY + headerHeight
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -45,6 +51,8 @@ function App() {
     }
 
     window.addEventListener('scroll', handleScroll)
+    // Also check on initial load
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -53,8 +61,9 @@ function App() {
       <Header activeSection={activeSection} />
       <main>
         <About />
-        <Skills />
         <Experience />
+        <Education />
+        <Skills />
         <Projects />
         <GitHub />
         <LeetCode />

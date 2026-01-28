@@ -240,7 +240,7 @@ export default function LeetCode() {
   }
 
   return (
-    <section id="leetcode" className="section-padding">
+    <section id="leetcode" className="section-padding scroll-mt-20">
       <div className="container-max">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-4">

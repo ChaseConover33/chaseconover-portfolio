@@ -1,79 +1,27 @@
-import { FaExternalLinkAlt, FaGithub, FaCode } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaGithub, FaCode, FaRocket } from 'react-icons/fa'
 
 export default function Projects() {
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies and best practices.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/ecommerce-platform',
-      liveUrl: 'https://your-project-demo.com',
-      featured: true,
-    },
-    {
-      title: 'Real-Time Chat Application',
-      description:
-        'Scalable chat application with WebSocket support, multiple rooms, file sharing, and end-to-end encryption. Handles thousands of concurrent users.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'Redis'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/chat-app',
-      liveUrl: 'https://your-chat-app.com',
-      featured: true,
-    },
-    {
-      title: 'Task Management System',
-      description:
-        'Enterprise-grade task management system with team collaboration, time tracking, analytics, and integrations with popular tools.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Vue.js', 'Django', 'PostgreSQL', 'Docker', 'Kubernetes'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/task-manager',
-      liveUrl: 'https://your-task-manager.com',
-      featured: false,
-    },
-    {
-      title: 'Machine Learning API',
-      description:
-        'RESTful API for machine learning model inference with support for multiple models, batch processing, and real-time predictions.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Python', 'FastAPI', 'TensorFlow', 'Docker', 'AWS Lambda'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/ml-api',
-      liveUrl: 'https://your-ml-api.com',
-      featured: false,
-    },
-    {
-      title: 'Portfolio Website Generator',
-      description:
-        'Open-source tool to generate beautiful portfolio websites from markdown files. Includes themes, SEO optimization, and deployment automation.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MDX'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/portfolio-generator',
-      liveUrl: 'https://your-portfolio-gen.com',
-      featured: false,
-    },
-    {
-      title: 'Blockchain Voting System',
-      description:
-        'Secure, transparent voting system built on blockchain technology. Features voter authentication, vote encryption, and immutable records.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'IPFS'],
-      githubUrl: 'https://github.com/YOUR_USERNAME/blockchain-voting',
-      liveUrl: 'https://your-voting-system.com',
-      featured: false,
-    },
-    // Add more projects as needed
-  ]
+  // Add your projects here when ready
+  // Format:
+  // {
+  //   title: 'Project Name',
+  //   description: 'Project description',
+  //   technologies: ['Tech1', 'Tech2', 'Tech3'],
+  //   githubUrl: 'https://github.com/ChaseConover33/project-name',
+  //   liveUrl: 'https://project-demo.com',
+  //   featured: true, // Set to true for featured projects
+  // }
+  const projects = []
 
   const featuredProjects = projects.filter((p) => p.featured)
   const otherProjects = projects.filter((p) => !p.featured)
 
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding scroll-mt-20">
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Featured Projects
+            Projects
           </h2>
           <p className="text-dark-text-muted text-lg max-w-2xl mx-auto">
             A collection of projects that showcase my skills, problem-solving
@@ -81,9 +29,35 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Featured Projects */}
-        <div className="space-y-24 mb-24">
-          {featuredProjects.map((project, index) => (
+        {/* Empty State */}
+        {projects.length === 0 ? (
+          <div className="bg-dark-card border border-dark-border rounded-lg p-12 md:p-16 text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-400/10 rounded-full mb-6">
+              <FaRocket className="w-10 h-10 text-blue-400" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Projects Coming Soon
+            </h3>
+            <p className="text-dark-text-muted text-lg max-w-md mx-auto mb-6">
+              I'm currently working on exciting projects that I'll be showcasing here soon. 
+              Check back later to see my latest work!
+            </p>
+            <a
+              href="https://github.com/ChaseConover33"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors font-medium"
+            >
+              <FaGithub className="w-5 h-5" />
+              View My GitHub
+            </a>
+          </div>
+        ) : (
+          <>
+            {/* Featured Projects */}
+            {featuredProjects.length > 0 && (
+              <div className="space-y-24 mb-24">
+                {featuredProjects.map((project, index) => (
             <div
               key={index}
               className={`grid md:grid-cols-2 gap-8 items-center ${
@@ -150,11 +124,12 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+                ))}
+              </div>
+            )}
 
-        {/* Other Projects Grid */}
-        {otherProjects.length > 0 && (
+            {/* Other Projects Grid */}
+            {otherProjects.length > 0 && (
           <>
             <div className="text-center mb-12">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -222,22 +197,26 @@ export default function Projects() {
           </>
         )}
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <p className="text-dark-text-muted mb-4">
-            Want to see more? Check out my GitHub for additional projects and
-            contributions.
-          </p>
-          <a
-            href="https://github.com/ChaseConover33"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-dark-card border border-dark-border rounded-lg hover:border-blue-400/50 transition-colors font-medium text-white"
-          >
-            <FaGithub className="w-5 h-5" />
-            View All Projects on GitHub
-          </a>
-        </div>
+            {/* Call to Action */}
+            {projects.length > 0 && (
+              <div className="mt-16 text-center">
+                <p className="text-dark-text-muted mb-4">
+                  Want to see more? Check out my GitHub for additional projects and
+                  contributions.
+                </p>
+                <a
+                  href="https://github.com/ChaseConover33"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-dark-card border border-dark-border rounded-lg hover:border-blue-400/50 transition-colors font-medium text-white"
+                >
+                  <FaGithub className="w-5 h-5" />
+                  View All Projects on GitHub
+                </a>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </section>
   )

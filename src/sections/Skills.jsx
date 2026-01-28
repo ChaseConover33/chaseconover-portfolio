@@ -10,29 +10,29 @@ const proficiencyLevels = {
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend Development',
-      icon: FaCode,
-      color: 'text-blue-400',
-      bgColor: 'bg-blue-400/10',
-      skills: [
-        { name: 'React', level: 'Advanced' },
-        { name: 'JavaScript', level: 'Advanced' },
-        { name: 'HTML/CSS', level: 'Advanced' },
-        { name: 'Tailwind CSS', level: 'Intermediate' },
-        { name: 'TypeScript', level: 'Intermediate' },
-      ],
-    },
-    {
       title: 'Backend Development',
       icon: FaServer,
       color: 'text-green-400',
       bgColor: 'bg-green-400/10',
       skills: [
-        { name: 'Java', level: 'Expert' },
+        { name: 'Java', level: 'Advanced' },
         { name: 'Python', level: 'Advanced' },
         { name: 'Node.js', level: 'Intermediate' },
         { name: 'Spring Boot', level: 'Advanced' },
         { name: 'Express.js', level: 'Intermediate' },
+      ],
+    },
+    {
+      title: 'Frontend Development',
+      icon: FaCode,
+      color: 'text-blue-400',
+      bgColor: 'bg-blue-400/10',
+      skills: [
+        { name: 'React', level: 'Beginner' },
+        { name: 'JavaScript', level: 'Intermediate' },
+        { name: 'HTML/CSS', level: 'Beginner' },
+        { name: 'Tailwind CSS', level: 'Beginner' },
+        { name: 'TypeScript', level: 'Intermediate' },
       ],
     },
     {
@@ -58,7 +58,7 @@ export default function Skills() {
         { name: 'Docker', level: 'Advanced' },
         { name: 'Kubernetes', level: 'Intermediate' },
         { name: 'CI/CD', level: 'Advanced' },
-        { name: 'Terraform', level: 'Intermediate' },
+        { name: 'Terraform', level: 'Advanced' },
         { name: 'Git', level: 'Expert' },
         { name: 'Linux', level: 'Advanced' },
       ],
@@ -79,7 +79,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="section-padding">
+    <section id="skills" className="section-padding scroll-mt-20">
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

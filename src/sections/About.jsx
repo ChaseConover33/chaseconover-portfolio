@@ -32,7 +32,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="section-padding pt-32 min-h-screen flex items-center">
+    <section id="about" className="section-padding min-h-screen flex items-center scroll-mt-20" style={{ paddingTop: '140px' }}>
       <div className="container-max">
         <div
           className={`grid md:grid-cols-2 gap-12 items-center transition-opacity duration-1000 ${
@@ -101,12 +101,21 @@ export default function About() {
           <div className="flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-3xl animate-pulse" />
-              <div className="relative w-full h-full bg-dark-card border-2 border-dark-border rounded-full flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/20" />
-                <div className="relative text-6xl md:text-7xl lg:text-8xl text-blue-400 font-bold z-10">
+              <div className="relative w-full h-full bg-dark-card border-2 border-dark-border rounded-full overflow-hidden">
+                <img
+                  src="/images/profile-photo.jpg"
+                  alt="Chase Conover"
+                  className="absolute inset-0 w-full h-full object-cover z-20"
+                  onError={(e) => {
+                    // Fallback to initials if image doesn't exist
+                    e.target.style.display = 'none'
+                    e.target.nextElementSibling.style.display = 'flex'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10 z-30 pointer-events-none" />
+                <div className="absolute inset-0 flex items-center justify-center text-6xl md:text-7xl lg:text-8xl text-blue-400 font-bold z-10" style={{ display: 'none' }}>
                   CC
                 </div>
-                {/* Replace with your photo */}
               </div>
             </div>
           </div>

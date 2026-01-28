@@ -3,11 +3,11 @@ import { FaDownload, FaFilePdf, FaExternalLinkAlt } from 'react-icons/fa'
 export default function Resumes() {
   const resumes = [
     {
-      title: 'Data Engineer Resume',
-      description: 'Resume showcasing my data engineering expertise, ETL pipelines, data warehousing, and big data technologies.',
+      title: 'Java Developer Resume',
+      description: 'Resume focused on Java development experience, enterprise applications, and backend systems.',
       version: 'Jan 2026',
-      fileUrl: '/resumes/Chase Conover - Data Engineer Resume.pdf',
-      size: '78 KB',
+      fileUrl: '/resumes/Java Developer Resume Jan 21.pdf',
+      size: '85 KB',
     },
     {
       title: 'DevOps Engineer Resume',
@@ -17,16 +17,16 @@ export default function Resumes() {
       size: '88 KB',
     },
     {
-      title: 'Java Developer Resume',
-      description: 'Resume focused on Java development experience, enterprise applications, and backend systems.',
+      title: 'Data Engineer Resume',
+      description: 'Resume showcasing my data engineering expertise, ETL pipelines, data warehousing, and big data technologies.',
       version: 'Jan 2026',
-      fileUrl: '/resumes/Java Developer Resume Jan 21.pdf',
-      size: '85 KB',
+      fileUrl: '/resumes/Chase Conover - Data Engineer Resume.pdf',
+      size: '78 KB',
     },
   ]
 
   return (
-    <section id="resumes" className="section-padding bg-dark-surface">
+    <section id="resumes" className="section-padding bg-dark-surface scroll-mt-20">
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

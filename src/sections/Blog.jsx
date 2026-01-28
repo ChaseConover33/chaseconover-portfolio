@@ -35,7 +35,7 @@ export default function Blog() {
   ]
 
   return (
-    <section id="blog" className="section-padding bg-dark-surface">
+    <section id="blog" className="section-padding bg-dark-surface scroll-mt-20">
       <div className="container-max">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Blog

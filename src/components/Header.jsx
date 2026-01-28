@@ -3,8 +3,9 @@ import { HiMenu, HiX } from 'react-icons/hi'
 
 const navItems = [
   { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
+  { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'github', label: 'GitHub' },
   { id: 'leetcode', label: 'LeetCode' },
@@ -28,7 +29,15 @@ export default function Header({ activeSection }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const header = document.querySelector('header')
+      const headerHeight = header ? header.offsetHeight - 20 : 60
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = Math.max(0, elementPosition - headerHeight)
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
       setIsMobileMenuOpen(false)
     }
   }

@@ -220,7 +220,7 @@ export default function GitHub() {
   }, [])
 
   return (
-    <section id="github" className="section-padding bg-dark-surface">
+    <section id="github" className="section-padding bg-dark-surface scroll-mt-20">
       <div className="container-max">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-4">
